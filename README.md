@@ -1,2 +1,2 @@
 # address-book
-creation of address-book lookup 
+This is a simple project for looking up the address-book and giving the result back to the user
