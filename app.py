@@ -1,35 +1,51 @@
-from flask import Flask
-from flask_cors import CORS
-#import ab
 import re
 import socket
 from sys import exit
 import random
 import json
 import csv
-
+import pandas as pd
 
 #the constructor
 app = Flask(__name__)
-#app = ab.ab(str(raw_input("Enter name of book  (Will be created if doesn't exist) \n> ")))
-#main_menu = '\n1. Show all contacts.\n2. Add contact.\n3. Search.\n4. Delete a contact.\n5.Update contact.\n6. Exit\n\n>'
 
-with open('address_file.txt', newline='') as myFile:
-    reader = csv.reader(myFile)
-    for row in reader:
-        print(row)
-@app.route('/')
-def hello():
-    with open('address_file.txt', newline='') as myFile:
-        reader = csv.reader(myFile)
-        l = []
-        for row in reader:
-            r = {}
-            r['first_name'] = row[0]
-            r['last_name'] = row[1]
-            l.append(r)
+@app.route('/load_data')
+def load_data():
+        global df
+        with open('address_file.txt', newline='') as myFile:
+                reader = csv.reader(myFile)
+                l = []
+                for row in reader:
+                    r = {}
+                    r['first_name'] = row[0].lower()
+                    r['last_name'] = row[1].lower()
+                    r['street_add'] = row[2].lower()
+                    r['city'] = row[3].lower()
+                    r['state'] = row[4].lower()
+                    r['area_code'] = row[5].lower()
+                    l.append(r)
+
+        df = pd.DataFrame(l)
+
         return json.dumps(l)
 
+# ?key=first_name,value=nitish
+@app.route('/query')
+def query_data():
+        key = request.args['key'].lower()
+        value = request.args['value'].lower()
+        if key not in df:
+            return("Invalid Key in your query")
+
+        new_df = df.loc[df[key] == value]
+        s = new_df.to_csv(header=True, index=False, line_terminator='<br>',columns=['first_name', 'last_name', 'street_add', 'city', 'state', 'area_code'])
+        if(len(new_df)>0):
+            return s.replace(',', '&#44;')
+        else:
+            return("Data is not present in the Address Book")
+        #return len(new_df)
+        #return s
+        #abort(make_response(s), 200)
 
 if __name__=='__main__':
    app.run(host=socket.gethostname(),port=5254)
