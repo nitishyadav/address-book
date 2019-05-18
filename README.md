@@ -30,10 +30,11 @@ This is a simple project for looking up the address-book and giving the result b
   You can load the data by just invoking, this will also display the data that you would have invoked:
     http://<IP-address>:5254/load_data
   And you can Search the address-book invoking this api:
+    ```
     http://<IP>:5254/query?key=first_name&value=dave
     or 
-    http://9.193.198.157:5254/query?key=firstname&value=Dave
-    
+    http://9.193.198.157:5254/query?key=first_name&value=Dave
+    ```
   Depending on the key you are searching, you will get appropriate feedback. Please try it out the application.  
  
   
