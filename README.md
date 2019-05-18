@@ -17,12 +17,10 @@ This is a simple project for looking up the address-book and giving the result b
     In the Dockerfile exposing the 5254 port so you can run the image(without attaching volumen) like:
      ```
      docker run -p 5254:5254 -d --name=address-app addressbook
-     ```
-   
-    Or you can attach a filesystem as Volume
+     
     
-     ```
-     docker run -p 5254:5254 --volume=<localfile>:/app -d --name=nitishaddress addressbook
+     Attaching a filesystem as volume
+     docker run -p 5254:5254 --volume=<localfile>:/app -d --name=<container-name> <image-name>
      docker run -p 5254:5254 --volume=/opt/address-book:/app -d --name=nitishaddress addressbook
      ```
     
