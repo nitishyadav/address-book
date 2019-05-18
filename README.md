@@ -1,6 +1,8 @@
 # Address Book Application
 This is a simple project for looking up the address-book and giving the result back to the user, whether the contact is present or not. Having two API's written with Python and Flask, one API to load the address book and the second API to search for a contact using the First Name.
 
+The project also conatains script to install jenkins as a conatiner so you can run this as a pipeline job in Jenkins [jenkins_install.sh]
+
 ## Pre-requisite to run this: 
   1. A system to build and run docker images with docker.io installed
   2. Just the basics of python or not
