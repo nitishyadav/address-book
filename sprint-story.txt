@@ -1,11 +1,12 @@
-Epic: Design and develop a project for a simple Address-Book lookup aplication
+Epic: Design and develop a project for a simple Address-Book lookup aplication using Python
 Story:
   S1. Create a Project(Repository) in Git
-  S2. Create a search function for the project
+  S2. Create a load data and search function for the project
   S3. Document the Project
   
 Task:
   T1. Create the Dockerfile for the python application(S1)
   T2. Create Makefile with all the commands and variables required for it to work(S1)
-  T3. Implement the Search functionality on the Data Set given(S2)
-  T4. Document the Project(S3)
+  T3. Implement the load functionality as a get API using Python and Flask (S2)
+  T3. Implement the Search functionality on the Data Set given as a get API using Python and Flask(S2)
+  T4. Document the Project in README.md file(S3)
