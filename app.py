@@ -9,6 +9,10 @@ import pandas as pd
 #the constructor
 app = Flask(__name__)
 
+@app.route('/')       
+def hello(): 
+    return 'HELLO: Welcome to Address Book Application'
+
 @app.route('/load_data')
 def load_data():
         global df
