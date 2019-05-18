@@ -6,7 +6,7 @@ This is a simple project for looking up the address-book and giving the result b
   2. Just the basics of python or not
   3. A web browser or Postman to call the API's
 
-## Build commands:
+## Build and Run commands:
   1. You can build the image using:
      ```
      docker build -t <image-name> .
@@ -23,6 +23,6 @@ This is a simple project for looking up the address-book and giving the result b
      docker run -p 5254:5254 --volume=<localfile>:/app -d --name=<container-name> <image-name>
      docker run -p 5254:5254 --volume=/opt/address-book:/app -d --name=nitishaddress addressbook
      ```
-    
+## Work with the application:
   
 
