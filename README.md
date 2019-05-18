@@ -24,5 +24,17 @@ This is a simple project for looking up the address-book and giving the result b
      docker run -p 5254:5254 --volume=/opt/address-book:/app -d --name=nitishaddress addressbook
      ```
 ## Work with the application:
+  Once you have application running as a container, the application will be running as:
+    http://<IP-address>:5254/load_data
+  IP will be your machine IP where docker is running is is taken care by socket.gethostname()
+  You can load the data by just invoking, this will also display the data that you would have invoked:
+    http://<IP-address>:5254/load_data
+  And you can Search the address-book invoking this api:
+    http://<IP>:5254/query?key=first_name&value=dave
+    or 
+    http://9.193.198.157:5254/query?key=firstname&value=Dave
+    
+  Depending on the key you are searching, you will get appropriate feedback. Please try it out the application.  
+ 
   
 
