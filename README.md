@@ -27,10 +27,10 @@ The project also contains script to install jenkins as a container so you can ru
      ```
 ## Work with the application:
   Once you have application running as a container, the application will be running as:
-    http://<IP-address>:5254/load_data
+    http://serverIp:5254/load_data
   IP will be your machine IP where docker is running is taken care by socket.gethostname()
   You can load the data by just invoking, this will also display the data that you would have invoked:
-    http://<IP-address>:5254/load_data
+    http://serverIp:5254/load_data
   And you can Search the address-book invoking this api:
   
     ```
