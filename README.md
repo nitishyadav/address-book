@@ -16,7 +16,7 @@ The project also contains script to install jenkins as a container so you can ru
      ```
   
   2. Running the image:
-    In the Dockerfile exposing the 5254 port so you can run the image(without attaching volumen) like:
+    In the Dockerfile exposing the 5254 port so you can run the image(without attaching volume) like:
      ```
      docker run -p 5254:5254 -d --name=address-app addressbook
      
