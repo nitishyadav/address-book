@@ -6,7 +6,6 @@ Story:
   
 Task:
   T1. Create the Dockerfile for the python application(S1)
-  T2. Create Makefile with all the commands and variables required for it to work(S1)
-  T3. Implement the load functionality as a get API using Python and Flask (S2)
+  T2. Implement the load functionality as a get API using Python and Flask (S2)
   T3. Implement the Search functionality on the Data Set given as a get API using Python and Flask(S2)
   T4. Document the Project in README.md file(S3)
